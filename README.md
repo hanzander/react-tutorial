@@ -7,6 +7,7 @@ My first React application following the official tutorial.
 - React 18
 - Vite
 - CSS3
+- TypeScript
 
 ## How to Run
 
