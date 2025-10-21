@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #000;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 2px 2px, rgba(255,255,255,0.08) 1px, transparent 0),
+    radial-gradient(circle at 4px 4px, rgba(255,107,53,0.05) 1px, transparent 0);
+  background-size: 30px 30px, 40px 40px;
+  animation: globalGrain 15s linear infinite, globalGrain2 20s linear infinite reverse;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+@keyframes globalGrain {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(20px, -15px) rotate(90deg) scale(1.05);
+  }
+  50% {
+    transform: translate(-10px, 25px) rotate(180deg) scale(0.95);
+  }
+  75% {
+    transform: translate(-25px, -10px) rotate(270deg) scale(1.02);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes globalGrain2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translate(-30px, 20px) rotate(108deg) scale(1.1);
+  }
+  60% {
+    transform: translate(25px, -30px) rotate(216deg) scale(0.9);
+  }
+  90% {
+    transform: translate(-20px, -25px) rotate(324deg) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg) scale(1);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
